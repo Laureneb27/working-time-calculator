@@ -1,0 +1,7 @@
+{
+  "name": "working-time-calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
