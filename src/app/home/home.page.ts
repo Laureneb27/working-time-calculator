@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+import { StorageService } from '../services/storage/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public storage: Storage) {}
 
+  async ngOnInit(){
+    await this.storage.set('name', 'Mr. Ionitron');
+    await this.storage.get('name').then((elem)=> console.log(elem))
+
+  }
 }

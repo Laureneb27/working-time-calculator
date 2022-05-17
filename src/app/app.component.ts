@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -8,12 +9,14 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   
-  constructor(private translateService: TranslateService) {
+  constructor(private translateService: TranslateService, private storage: Storage) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
 		// Configure the TranslateService
 		this.translateService.setDefaultLang('fr');
 		this.translateService.use('fr');
+    // Init storage
+    await this.storage.create();
 	}
 }
