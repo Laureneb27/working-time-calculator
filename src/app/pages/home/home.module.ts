@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { TimeFormComponent } from 'src/app/components/time-form/time-form.component';
 
 
 @NgModule({
@@ -16,6 +17,6 @@ import { TranslateModule } from '@ngx-translate/core';
     HomePageRoutingModule,
     TranslateModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, TimeFormComponent]
 })
 export class HomePageModule {}
