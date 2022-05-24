@@ -10,6 +10,7 @@ import { TranslateLoader, TranslateModule, TranslateStore} from '@ngx-translate/
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -24,6 +25,7 @@ export function createTranslateLoader(http: HttpClient) {
       IonicModule.forRoot(), 
       AppRoutingModule, 
       HttpClientModule,
+      IonicStorageModule.forRoot(),
       TranslateModule.forChild({
         loader: {
           provide: TranslateLoader,

@@ -1,0 +1,15 @@
+<!-- <ion-button id="trigger-button">Click to open modal</ion-button> -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button id="trigger-button">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-modal trigger="trigger-button">
+  <ng-template>
+    <ion-content>
+      <ion-input placeholder="Enter your name" [(ngModel)]="name" ></ion-input>
+      <ion-button expand="full" (click)="onSaveTimeForm()">Full Button</ion-button>
+      <li *ngFor="let item of this.storage.getObject('time')">{{item.name}}</li>
+    </ion-content>
+  </ng-template>
+</ion-modal>
