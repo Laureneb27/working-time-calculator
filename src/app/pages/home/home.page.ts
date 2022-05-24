@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { StorageService } from '../services/storage/storage.service';
 
 @Component({
   selector: 'app-home',

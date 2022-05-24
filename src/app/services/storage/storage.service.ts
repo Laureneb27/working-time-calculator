@@ -1,30 +1,49 @@
 import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage-angular';
+import { TimeElementClass } from 'src/app/shared/models/time/time-element-class.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
-  private _storage: Storage | null = null;
-
-  constructor(private storage: Storage) {
-    this.init();
-  }
-
-  async init() {
-    // If using, define drivers here: await this.storage.defineDriver(/*...*/);
-    const storage = await this.storage.create();
-    this._storage = storage;
-  }
+  private storage = localStorage;
 
   public set(key: string, value: any) {
-    this._storage?.set(key, value);
+    
+    localStorage.setItem(key, value);
     console.log(this)
   }
 
   public get(key: string) {
-    console.log(this._storage)
-    this._storage?.get(key);
+    console.log(localStorage)
+    localStorage.getItem(key);
+  }
+  
+  // set a key/value object
+  async setObject(key: string, object: Object) {
+    try {
+      console.log(object);
+      await localStorage.setItem(key, JSON.stringify(object));
+      return true;
+    } catch (reason) {
+      console.log(reason);
+      return false;
+    }
+  }
+
+  // get a key/value object
+  getObject(key: string): Array<any> {
+    try {
+      const result = localStorage.getItem(key);
+      if (result != null) {
+        console.log(JSON.parse(result));
+        return JSON.parse(result);
+      }
+      return null;
+    } catch (reason) {
+      console.log(reason);
+      return null;
+    }
   }
 }
