@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { TimeFormComponent } from 'src/app/components/time-form/time-form.component';
+import { FormRequiredComponent } from 'src/app/components/validators/form-required/form-required.component';
 
 
 @NgModule({
@@ -15,8 +16,10 @@ import { TimeFormComponent } from 'src/app/components/time-form/time-form.compon
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  declarations: [HomePage, TimeFormComponent]
+  declarations: [HomePage, TimeFormComponent, FormRequiredComponent ]
 })
 export class HomePageModule {}

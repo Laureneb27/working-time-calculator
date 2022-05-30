@@ -1,0 +1,3 @@
+<ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && errorControl.date.errors?.required">
+  <span>{{ 'FORM.ERRORS.REQUIRED' | translate:{'field': field | translate } }}</span>
+</ion-text>

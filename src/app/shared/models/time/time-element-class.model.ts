@@ -1,13 +1,15 @@
 import { Time } from "@angular/common";
 
 export class TimeElementClass {
-    private name: string;
-    private arrivingTime: string;
-    private leavingTime: string;
-    private lunchTime: string;
+    private date: Date;
+    private selectedType: Number;
+    private arrivingTime: Time;
+    private leavingTime: Time;
+    private lunchTime: Time;
 
-	constructor(name: string, arrivingTime: string, leavingTime: string, lunchTime: string) {
-		this.name = name;
+	constructor(date: Date,selectedType:number, arrivingTime: Time, leavingTime: Time, lunchTime: Time) {
+		this.date = date;
+		this.selectedType = selectedType;
 		this.arrivingTime = arrivingTime;
 		this.leavingTime = leavingTime;
 		this.lunchTime = lunchTime;
