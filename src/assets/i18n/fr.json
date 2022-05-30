@@ -1,3 +1,13 @@
 {  
-    "TITLE": "Calculateur d'heure de travail"
+    "TITLE": "Calculateur d'heure de travail",
+    "FORM" : {
+        "TYPE": "Type",
+        "ARRIVING-TIME": "Heure d'arrivée",
+        "LEAVING-TIME": "Heure de départ",
+        "PAUSED-TIME" : "Temps de pause",
+        "DATE" : "Date",
+        "ERRORS":{
+            "REQUIRED" : "Le champ {{field}} est obligatoire"
+        }
+    }
 }

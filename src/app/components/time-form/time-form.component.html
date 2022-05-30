@@ -7,9 +7,36 @@
 <ion-modal trigger="trigger-button">
   <ng-template>
     <ion-content>
-      <ion-input placeholder="Enter your name" [(ngModel)]="name" ></ion-input>
-      <ion-button expand="full" (click)="onSaveTimeForm()">Full Button</ion-button>
-      <li *ngFor="let item of this.storage.getObject('time')">{{item.name}}</li>
+      <form (ngSubmit)="onSaveTimeForm()" [formGroup]="timeForm">
+        <ion-item lines="full">
+          <ion-label>{{ 'FORM.DATE' | translate }} </ion-label>
+          <ion-input formControlName="date" type="date"></ion-input>
+          <app-form-required [field]="'FORM.DATE'" [isSubmitted]="isSubmitted" [errorControl]="errorControl"></app-form-required>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ 'FORM.TYPE' | translate }} </ion-label>
+          <ion-select formControlName="selectedType">
+            <ion-select-option *ngFor="let type of dayTypes" [value]="type.id">{{type.value}}</ion-select-option>
+          </ion-select>
+          <app-form-required [field]="'FORM.TYPE'" [isSubmitted]="isSubmitted" [errorControl]="errorControl"></app-form-required>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ 'FORM.ARRIVING-TIME' | translate }} </ion-label>
+          <ion-input type="time" formControlName="arrivingTime"></ion-input>
+          <app-form-required [field]="'FORM.ARRIVING-TIME'" [isSubmitted]="isSubmitted" [errorControl]="errorControl"></app-form-required>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ 'FORM.LEAVING-TIME' | translate }} </ion-label>
+          <ion-input type="time" formControlName="leavingTime"></ion-input>
+          <app-form-required [field]="'FORM.LEAVING-TIME'" [isSubmitted]="isSubmitted" [errorControl]="errorControl"></app-form-required>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ 'FORM.PAUSED-TIME' | translate }} </ion-label>
+          <ion-input type="time" formControlName="pausedTime"></ion-input>
+          <app-form-required [field]="'FORM.PAUSED-TIME'" [isSubmitted]="isSubmitted" [errorControl]="errorControl"></app-form-required>
+        </ion-item>
+        <ion-button type="submit" expand="full" >Full Button</ion-button>
+      </form>
     </ion-content>
   </ng-template>
 </ion-modal>

@@ -7,5 +7,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <li *ngFor="let item of this.storage.getObject('time')">{{item.date}} - {{item.arrivingTime}} - {{item.leavingTime}}</li>
   <app-time-form></app-time-form>
 </ion-content>

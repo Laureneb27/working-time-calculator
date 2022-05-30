@@ -1,3 +1,13 @@
 {  
-    "TITLE": "Working Time Calculator"
+    "TITLE": "Working Time Calculator",
+    "FORM" : {
+        "TYPE": "Type",
+        "ARRIVING-TIME": "Arrived time",
+        "LEAVING-TIME": "Leaving time",
+        "PAUSED-TIME" : "Paused time",
+        "DATE" : "Date",
+        "ERRORS":{
+            "REQUIRED" : "The field {{field}} is required"
+        }
+    }
 }
