@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Storage } from '@ionic/storage-angular';
 import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
@@ -10,5 +9,8 @@ import { StorageService } from 'src/app/services/storage/storage.service';
 export class HomePage {
 
   constructor(public storage: StorageService) {}
+  ngOnInit(){
+    
+  }
 
 }

@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { TimeFormComponent } from 'src/app/components/time-form/time-form.component';
 import { FormRequiredComponent } from 'src/app/components/validators/form-required/form-required.component';
+import { CalendarComponent } from 'src/app/components/calendar/calendar.component';
 
 
 @NgModule({
@@ -20,6 +21,6 @@ import { FormRequiredComponent } from 'src/app/components/validators/form-requir
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [HomePage, TimeFormComponent, FormRequiredComponent ]
+  declarations: [HomePage, TimeFormComponent, FormRequiredComponent, CalendarComponent ]
 })
 export class HomePageModule {}

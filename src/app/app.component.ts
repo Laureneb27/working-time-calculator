@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { TranslateService } from '@ngx-translate/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-root',
@@ -18,5 +19,8 @@ export class AppComponent {
 		this.translateService.use('fr');
     // Init storage
     await this.storage.create();
+    // Init moment locale
+    moment.locale('fr');
+
 	}
 }

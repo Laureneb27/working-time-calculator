@@ -9,5 +9,9 @@
         "ERRORS":{
             "REQUIRED" : "Le champ {{field}} est obligatoire"
         }
+    },
+    "CALENDAR":
+    {   
+       "WEEK-DATE": "Semaine {{weekNumber}} du {{firstDayWeek}} au {{lastDayWeek}}"
     }
 }
